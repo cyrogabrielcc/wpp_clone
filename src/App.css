@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #d2dbdc;
+    margin: 0;
+    font-family: 'Segoe UI', Helvetica Neue, Verdana, sans-serif;
+}
+
+.app-window{
+    display: flex;
+    height: 100vh;
+    background-color: #ededed;
+}
+
+
+.sidebar {
+    width: 35%;
+    display: flex;
+    max-width: 415px;
+    flex-direction: column;
+    border-right: 1px solid #ddd;
+    
+
+} 
+
+
+
+
+
+/* .contentarea {
+
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
