@@ -55,10 +55,29 @@ header {
     cursor: pointer;
 }
 
-.contentarea {
+/* .contentarea {}  */
 
-} 
+.search{
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #eee;
+    padding: 5px 15px;
+}
 
+.search--input input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    margin-left: 10px;
+}
+
+.search--input {
+    background-color: white;
+    height: 40px;
+    border-radius: 20px;
+    align-items: center;
+    padding: 0 10px;
+}
 
 
 

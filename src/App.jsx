@@ -1,7 +1,11 @@
+/* eslint-disable array-callback-return */
 /* eslint-disable no-unused-vars */
+/* eslint-disable-next-line */
 /* eslint-disable import/no-anonymous-default-export */
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css'
+
+import ChatListItem from './components/ChatListItem.jsx';
 
 //importações
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
@@ -11,6 +15,9 @@ import SearchIcon from '@material-ui/icons/Search';
 
 
 export default () => {
+
+    const [chatList, setChatList] = useState([{},{},{}])
+
   return (
     <div className="app-window">
         <div className="sidebar">
@@ -32,12 +39,16 @@ export default () => {
             <div className="search">
                 <div className="search--input">
                     <SearchIcon fontSize="small" style={{color:'#919191'}}/>
-                    <input type="search" placeholder="procurar ou iniciar uma nova conversa..." />
+                    <input type="search" placeholder="escreva algo..." />
                 </div>
             </div>
 
             <div className="chatlist">
-            -----
+                {chatList.map((item,key)=>{
+                   <ChatListItem
+                   key = {key}
+                   />
+                })}
             </div>
         </div>
 

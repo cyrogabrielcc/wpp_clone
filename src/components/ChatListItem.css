@@ -1,0 +1,33 @@
+.chatListItem{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    height: 70px;
+}
+
+.chatListItem--avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+
+.chatListItem--lines{
+
+}
+
+.chatListItem--line{
+
+}
+
+.chatListItem--name{
+
+}
+
+.chatListItem--date{
+
+}
+
+.chatListItem--lastMsg{
+
+}
