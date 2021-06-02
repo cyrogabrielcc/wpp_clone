@@ -23,8 +23,6 @@ body {
     max-width: 415px;
     flex-direction: column;
     border-right: 1px solid #ddd;
-
-
 } 
 
 header {
@@ -79,6 +77,21 @@ header {
     padding: 0 10px;
 }
 
+.chatList{
+    flex: 1;
+    background-color: #fff;
+    overflow-y: auto;
+}
+
+.chatList::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(0, 0, 0, 0.2);
+ }
+ 
+ .chatList::-webkit-scrollbar-thumb {
+     background-color: rgba(0, 0, 0, 0.2);
+  }
 
 
 

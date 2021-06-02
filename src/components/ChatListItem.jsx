@@ -7,12 +7,12 @@ export default () => {
             <img className="chatListItem--avatar" src="https://www.w3schools.com/w3images/avatar2.png" alt="" />
                 <div className="chatListItem--lines">
                     <div className="chatListItem--line">
-                        <div className="ChatListItem--name">Cyro Gabriel</div>
-                        <div className="ChatListItem--date">04:00</div>
+                        <div className="chatListItem--name">Cyro Gabriel</div>
+                        <div className="chatListItem--date">04:00</div>
                     </div>
                     <div className="chatListItem--line">
-                        <div className="ChatListItem--lastMsg">
-                            <p>​Quem aqui da live que trabalhe com react/react native/node.js/typescript e/ou wordpress estou contratando</p>
+                        <div className="chatListItem--lastMsg">
+                            <p>​uma curiosidade para quem ainda não sabe, o WhatsApp originlal na sua versão web foi escrito em React</p>
                        </div>
                     </div>
             </div>

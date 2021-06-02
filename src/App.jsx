@@ -16,7 +16,7 @@ import SearchIcon from '@material-ui/icons/Search';
 
 export default () => {
 
-    const [chatList, setChatList] = useState([{},{},{}])
+    const [chatList, setChatList] = useState([{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}])
 
   return (
     <div className="app-window">
@@ -43,12 +43,12 @@ export default () => {
                 </div>
             </div>
 
-            <div className="chatlist">
-                {chatList.map((item,key)=>{
-                   <ChatListItem
-                   key = {key}
-                   />
-                })}
+            <div className="chatList">
+                {chatList.map((item,key)=>(
+                    <ChatListItem
+                        key={key}
+                    />
+                ))}
             </div>
         </div>
 
