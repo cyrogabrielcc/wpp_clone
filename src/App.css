@@ -53,7 +53,9 @@ header {
     cursor: pointer;
 }
 
-/* .contentarea {}  */
+.contentarea {
+    flex: 1;
+}  
 
 .search{
     background-color: #f6f6f6;
