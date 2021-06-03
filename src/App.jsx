@@ -18,13 +18,14 @@ import SearchIcon from '@material-ui/icons/Search';
 
 export default () => {
 
-    const [chatList, setChatList] = useState([
-        {chatId:1, title: 'Fulano', image: 'https://www.w3schools.com/w3images/avatar2.png'},
-        {chatId:2, title: 'Fulano JR', image: 'https://www.w3schools.com/w3images/avatar2.png'},
-        {chatId:3,  title: 'Georgina', image: 'https://www.w3schools.com/w3images/avatar2.png'},
-        {chatId:4},
-        {chatId:5},
-        {chatId:6}]);
+    const [chatList, setChatList] = useState
+    ([
+        {chatId:1, title: 'Goku', image: 'https://www.w3schools.com/w3images/avatar1.png'},
+        {chatId:2, title: 'Saitama', image: 'https://www.w3schools.com/w3images/avatar2.png'},
+        {chatId:3,  title: 'Genos', image: 'https://www.w3schools.com/w3images/avatar3.png'},
+        {chatId:4,  title: 'Tatsumaki', image: 'https://www.w3schools.com/w3images/avatar4.png'},
+    ]);
+
     const [activeChat, setActiveChat] = useState({});
 
   return (
@@ -56,6 +57,7 @@ export default () => {
                 {chatList.map((item,key)=>(
                     <ChatListItem
                         key={key}
+                        data={item}
                         active={activeChat.chatId === chatList[key].chatId}
                         onClick={()=>setActiveChat(chatList[key])}
                     />
