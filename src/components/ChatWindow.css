@@ -37,7 +37,7 @@
     margin-right: 15px;
 }
 
-.chatWindow-btn{
+.chatWindow--btn {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -45,6 +45,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .chatWindow--body {
@@ -101,7 +102,7 @@ aside.emoji-picker-react {
 .chatWindow--emojiarea{
     height: 200px;
     overflow-y: hidden;
-    transition: all ease 0.3;
+    transition: all ease 0.3s;
 }
 
 
