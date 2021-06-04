@@ -17,7 +17,7 @@ import SendIcon from '@material-ui/icons/Send';
 import MicIcon from '@material-ui/icons/Mic';
 
 
-export default() => {
+export default({user, data}) => {
 
     let recognition = null;
 
@@ -30,7 +30,15 @@ export default() => {
     const [emojiOpen, setEmojiOpen] = useState(false)
     const [text, setText] = useState('')
     const [listening, setListening] = useState(false)
-    const [list, setList] = useState([{},{},{}]);
+    const [list, setList] = useState([
+        {author:123, body:'blablablablablablablablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablablablablablablablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablabla'},
+        
+    ]);
 
     const handleEmojiClick = (e, emojiObject) => {
         setText(text + emojiObject.emoji)
