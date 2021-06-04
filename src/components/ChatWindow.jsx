@@ -1,21 +1,36 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable no-unused-vars */
 /* eslint-disable import/no-anonymous-default-export */
 import React, {useState} from 'react'
 import EmojiPicker from 'emoji-picker-react'
 import './ChatWindow.css'
 
+import MessageItem from './MessageItem.jsx';
 
+//import icons
 import SearchIcon from '@material-ui/icons/Search';
 import AttachFiletIcon from '@material-ui/icons/AttachFile';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import CloseIcon from '@material-ui/icons/Close';
 import SendIcon from '@material-ui/icons/Send';
-// import MicIcon from '@material-ui/icons/Mic';
+import MicIcon from '@material-ui/icons/Mic';
+
 
 export default() => {
 
+    let recognition = null;
+
+    let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (SpeechRecognition !== undefined ) {
+        recognition = new SpeechRecognition()
+    }
+
     const [emojiOpen, setEmojiOpen] = useState(false)
     const [text, setText] = useState('')
+    const [listening, setListening] = useState(false)
+    const [list, setList] = useState([{},{},{}]);
 
     const handleEmojiClick = (e, emojiObject) => {
         setText(text + emojiObject.emoji)
@@ -27,6 +42,25 @@ export default() => {
     const handleCloseEmoji = () => {
         setEmojiOpen(false)
     }
+    const handleSendClick = () => {
+        
+    }
+
+    const handleMicClick = () => {
+        if(recognition!==null){
+            recognition.onstart = () => {
+                setListening(true)
+            }
+            recognition.onend = () => {
+                setListening(false)
+            }
+
+            recognition.onresult =(e) => {
+                setText(e.results[0][0].transcript)
+            }
+            recognition.start()
+        }
+    }
 
     return (
         <div className="chatWindow" >
@@ -35,6 +69,7 @@ export default() => {
                     <img src="https://www.w3schools.com/w3images/avatar2.png" alt="" className="chatWindow--avatar" />
                     <div className="chatWindow--name">Cyro Gabriel</div>
                 </div>
+                
             <div className="chatWindow--headerButtons">
                 <div className="chatWindow-btn">
                     <SearchIcon style={{color:'#919191'}}/>
@@ -46,6 +81,12 @@ export default() => {
 
 
         <div className="chatWindow--body">
+            {list.map((item,key)=>(
+                <MessageItem
+                    key={key}
+                    data={item}
+                />
+            ))}
         </div>
 
         <div className="chatWindow--emojiarea" style={{height: emojiOpen ? '200px' : '0px'}}>
@@ -79,9 +120,19 @@ export default() => {
                 </div>
                     
                 <div className="chatWindow--pos">
-                    <div className="chatWindow--btn">
-                        <SendIcon style={{color:'#919191'}}/>
-                    </div>
+                    {  
+                        text !== '' &&
+                            <div className="chatWindow--btn" onClick={handleSendClick}>
+                                <SendIcon style={{color: listening ?'#126ece':'#919191'}}/>
+                            </div>
+                    }
+                    
+                    { 
+                        text === '' &&
+                            <div className="chatWindow--btn" onClick={handleMicClick} >
+                                <MicIcon style={{color:'#919191'}} />
+                            </div>
+                    }
                 </div>
             </div>
         </div>
