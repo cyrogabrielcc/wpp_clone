@@ -27,6 +27,13 @@ export default () => {
     ]);
 
     const [activeChat, setActiveChat] = useState({});
+    const [user, setUser] = useState(
+        {
+            id:1234,
+            avatar: 'https://www.w3schools.com/w3images/avatar1.png',
+            name: 'Kakaroto'
+        }
+    );
 
   return (
     <div className="app-window">
@@ -67,7 +74,11 @@ export default () => {
 
 
         <div className="contentarea" >
-            {activeChat.chatId !== undefined && <ChatWindow/>}
+            {activeChat.chatId !== undefined &&             
+                <ChatWindow
+                    user ={user}
+                />
+            }
             {activeChat.chatId === undefined && <ChatIntro/>}
         </div>
     </div>

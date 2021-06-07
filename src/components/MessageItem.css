@@ -1,9 +1,11 @@
-.MessageLine {
+.MessageLine 
+{
     margin-bottom: 10px;
     display: flex;
 }
 
-.MessageDate {
+.MessageDate 
+{
     font-size: 11px;
     color: #999;
     margin-right: 5px;
@@ -12,7 +14,8 @@
     margin-top: -15px;
 }
 
-.MessageItem {
+.MessageItem 
+{
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 1px 1px #ccc;
@@ -22,7 +25,8 @@
     max-width: 90%;
 }
 
-.MessageText {
+.MessageText 
+{
     font-size: 14px;
     margin: 5px 40px 5px 5px;
 }

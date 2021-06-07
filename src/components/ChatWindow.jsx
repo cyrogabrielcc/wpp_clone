@@ -17,7 +17,7 @@ import SendIcon from '@material-ui/icons/Send';
 import MicIcon from '@material-ui/icons/Mic';
 
 
-export default({user, data}) => {
+export default({user}) => {
 
     let recognition = null;
 
