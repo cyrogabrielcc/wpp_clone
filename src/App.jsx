@@ -39,7 +39,7 @@ export default () => {
     <div className="app-window">
         <div className="sidebar">
             <header>
-                <img src="https://www.w3schools.com/w3images/avatar2.png" alt="" className="header--avatar" />
+                <img src={user.avatar} alt="" className="header--avatar" />
                 <div className="header--buttons">
                     <div className="header--btn">
                         <DonutLargeIcon style={{color:'#919191'}} />

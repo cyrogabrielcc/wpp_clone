@@ -93,6 +93,7 @@ export default({user}) => {
                 <MessageItem
                     key={key}
                     data={item}
+                    user={user}
                 />
             ))}
         </div>
