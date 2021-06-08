@@ -29,7 +29,7 @@ export default () => {
     const [activeChat, setActiveChat] = useState({});
     const [user, setUser] = useState(
         {
-            id:1234,
+            id:123,
             avatar: 'https://www.w3schools.com/w3images/avatar1.png',
             name: 'Kakaroto'
         }
