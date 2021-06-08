@@ -8,6 +8,7 @@ import './App.css'
 import ChatListItem from './components/ChatListItem.jsx';
 import ChatIntro from './components/ChatIntro'
 import ChatWindow from './components/ChatWindow'
+import NewChat from './components/NewChat'
 
 //importações
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
@@ -81,6 +82,7 @@ export default () => {
             }
             {activeChat.chatId === undefined && <ChatIntro/>}
         </div>
+            <NewChat/>
     </div>
   );
 }
