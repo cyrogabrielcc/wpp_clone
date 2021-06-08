@@ -1,7 +1,7 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-anonymous-default-export */
-import React, {useState} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import EmojiPicker from 'emoji-picker-react'
 import './ChatWindow.css'
 
@@ -18,6 +18,8 @@ import MicIcon from '@material-ui/icons/Mic';
 
 
 export default({user}) => {
+
+    const body = useRef()
 
     let recognition = null;
 
@@ -37,8 +39,98 @@ export default({user}) => {
         {author:12, body:'blablablablablablablablabla'},
         {author:123, body:'blablabla'},
         {author:12, body:'blablabla'},
+        {author:123, body:'blablablablablablablablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablablablablablablablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablablablablablablablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablablablablablablablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablablablablablablablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablablablablablablablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablablablablablablablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablablablablablablablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablablablablablablablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablablablablablablablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablablablablablablablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablablablablablablablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablablablablablablablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablablablablablablablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablablablablablablablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablablablablablablablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablablablablablablablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablablablablablablablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablablablablablablablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablablablablablablablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablablablablablablablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablablablablablablablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablablablablablablablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablablablablablablablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablablablablablablablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablablablablablablablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablablablablablablablabla'},
+        {author:12, body:'blablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablablablablablablablabla'},
+        {author:123, body:'blablabla'},
+        {author:12, body:'blablabla'},
         
     ]);
+
+    useEffect(()=>{
+        if(body.current.scrollHeight > body.current.offsetHeight){
+            body.current.scrollTop = body.current.scrollHeight - body.current.offsetHeight;
+        }
+    },[list])
 
     const handleEmojiClick = (e, emojiObject) => {
         setText(text + emojiObject.emoji)
@@ -88,7 +180,7 @@ export default({user}) => {
         </div>
 
 
-        <div className="chatWindow--body">
+        <div ref={body} className="chatWindow--body">
             {list.map((item,key)=>(
                 <MessageItem
                     key={key}
