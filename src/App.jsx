@@ -38,7 +38,10 @@ export default () => {
 
   return (
     <div className="app-window">
+
         <div className="sidebar">
+            <NewChat/>
+
             <header>
                 <img src={user.avatar} alt="" className="header--avatar" />
                 <div className="header--buttons">
@@ -82,7 +85,6 @@ export default () => {
             }
             {activeChat.chatId === undefined && <ChatIntro/>}
         </div>
-            <NewChat/>
     </div>
   );
 }

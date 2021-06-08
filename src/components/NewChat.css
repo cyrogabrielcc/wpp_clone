@@ -4,6 +4,17 @@
     position: fixed;
     left: 0;
     top: 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ddd;
+}
+
+.newChat--head {
+    display: flex;
+    background-color: #00BFA5;
+    align-items: center;
+    padding: 60px 15px 15px 15px;
 }
 
 
