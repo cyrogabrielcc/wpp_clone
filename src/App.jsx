@@ -35,12 +35,18 @@ export default () => {
             name: 'Kakaroto'
         }
     );
+    const [showNewChat, setShowNewChat] = useState(false)
 
   return (
     <div className="app-window">
 
         <div className="sidebar">
-            <NewChat/>
+            <NewChat
+                chatlist = {chatList}
+                user={user}
+                show = {showNewChat}
+                setShow={setShowNewChat}
+            />
 
             <header>
                 <img src={user.avatar} alt="" className="header--avatar" />
